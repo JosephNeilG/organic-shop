@@ -5,92 +5,114 @@
             <p class="mb-0 fw-semibold gray">Let's order fresh items for you.</p>
         </div>
         <div class="d-flex gap-2">
-            <button type="button" class="btn btn-outline-purple px-3" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</button>
+            <button type="button" class="btn btn-outline-purple px-3" data-bs-toggle="modal"
+                data-bs-target="#signupModal">Signup</button>
             <button class="btn btn-solid-purple px-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
         </div>
     </div>
 </header>
 
 <!-- Signup Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
             <div class="modal-body p-0 d-flex">
-                <div class="p-5 flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <img src="assets/icons/leaf.png" alt="Icon" width="24" height="24">
-                        <h5 class="mb-0 fw-semibold">Signup to Order</h5>
+                <div class="p-4 flex-grow-1">
+                    <img src="assets/icons/nav-logo.svg" alt="Icon" width="36" height="51">
+                    <div class="my-4 d-flex">
+                        <img src="/assets/icons/auth-smile.svg" alt="Smile Icon">
+                        <p class="mb-0 fw-semibold text-muted ms-2 small">Signup to order.</p>
+                        <p class="purple small mb-0 ms-auto">
+                            Already a member?
+                            <a href="#" class="text-decoration-none purple link-hover" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Login here.</a>
+                        </p>
                     </div>
-
-                    <p class="text-muted small mb-4">
-                        Already a member? 
-                        <a href="#" class="text-decoration-none fw-semibold" data-bs-toggle="modal" data-bs-target="#loginModal">Login here</a>
-                    </p>
 
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="signupFirstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="signupFirstName" placeholder="Enter first name">
+                                <input type="text" class="form-control" id="signupFirstName" placeholder="First Name">
                             </div>
                             <div class="col-md-6">
-                                <label for="signupLastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="signupLastName" placeholder="Enter last name">
+                                <input type="text" class="form-control" id="signupLastName" placeholder="Last Name">
                             </div>
                             <div class="col-12">
-                                <label for="signupEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Email">
                             </div>
                             <div class="col-12">
-                                <label for="signupPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="signupPassword" placeholder="Enter password">
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Password">
                             </div>
-                            <div class="col-12">
-                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm password">
+                            <div class="col-12 mb-2">
+                                <input type="password" class="form-control" id="signupConfirmPassword"
+                                    placeholder="Confirm password">
                             </div>
                         </div>
-
                         <div class="border-top mt-4 pt-3">
-                            <button type="submit" class="btn btn-solid-purple w-100">Signup</button>
+                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Signup</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="d-md-block position-relative">
-                    <img src="/assets/img/auth-form-img.jpg" alt="Signup Image" class="img-fluid h-100 rounded-end" style="width: 165px; object-fit: cover;">
-                    
-                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img src="/assets/img/auth-form-img.jpg" alt="Signup Image"
+                        class="auth-img img-fluid h-100 rounded-end">
+                    <img src="/assets/img/auth-overlay.svg" alt="Overlay"
+                        class="auth-overlay position-absolute bottom-0 end-0 rounded-end">
+
+                    <button type="button"
+                        class="btn-close bg-white rounded-circle p-2 position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="loginEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-body p-0 d-flex">
+                <div class="p-4 flex-grow-1">
+                    <img src="assets/icons/nav-logo.svg" alt="Icon" width="36" height="51">
+                    
+                    <div class="my-4 d-flex">
+                        <img src="/assets/icons/auth-smile.svg" alt="Smile Icon">
+                        <p class="mb-0 fw-semibold text-muted ms-2 small">Login to order.</p>
+                        <p class="purple small mb-0 ms-auto">
+                            New member?
+                            <a href="#" class="text-decoration-none purple link-hover" data-bs-toggle="modal"
+                                data-bs-target="#signupModal">Register here.</a>
+                        </p>
                     </div>
-                    <div class="mb-3">
-                        <label for="loginPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
-                    </div>
-                    <button type="submit" class="btn btn-solid-purple w-100">Login</button>
-                </form>
+
+                    <form>
+                        <div class="row g-3">  
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-md-block position-relative">
+                    <img src="/assets/img/auth-form-img.jpg" alt="Signup Image"
+                        class="login-img img-fluid h-100 rounded-end">
+                    <img src="/assets/img/auth-overlay.svg" alt="Overlay"
+                        class="auth-overlay position-absolute bottom-0 end-0 rounded-end">
+
+                    <button type="button"
+                        class="btn-close bg-white rounded-circle p-2 position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
