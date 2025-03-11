@@ -22,14 +22,8 @@
     font-size: 10px;
 }
 
-.px-custom {
-    padding-left: 28px;
-    padding-right: 28px;
-}
-
-.py-custom {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.custom-p {
+    padding: 13px 28px;
 }
 
 form div .form-control {
@@ -41,4 +35,8 @@ form div .form-control {
 form div .form-control::placeholder {
     color: #ADA9C0;
     font-size: 14px;
+}
+
+#quantity {
+    width: 77px;
 }
