@@ -1,0 +1,51 @@
+* {
+    /* outline: 1px solid red; */
+}
+
+body,
+.nav-active,
+.nav-hover:hover {
+    background-color: #ecf2f8;
+}
+
+.nav-logo {
+    width: auto;
+    height: 30px;
+}
+
+.btn-outline-purple {
+    border-color: #9C89FF;
+    color: #9C89FF;
+}
+
+.btn-outline-purple:hover {
+    border-color: none;
+    background-color: #9C89FF;
+    color: white;
+}
+
+.btn-solid-purple {
+   background-color: #9C89FF; 
+   color: white;
+}
+
+.btn-solid-purple:hover {
+    background-color: none;
+    border: 1px solid #9C89FF;
+    color: #9C89FF;
+}
+
+.gray {
+    color: #ADA9C0;
+}
+
+.input-group input::placeholder,
+.input-group input {
+    color: #ADA9C0;
+    font-size: 13px;
+}
+
+section form .input-group,
+section div a {
+    height: 40px;
+}
