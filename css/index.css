@@ -49,3 +49,26 @@ section form .input-group,
 section div a {
     height: 40px;
 }
+
+.list-group-item.active {
+    background-color: white;
+    color: black;
+    border: 1px solid #9C89FF;
+}
+.list-group li img{
+    width: 42px;
+    height: 42px;
+}
+
+.list-group li{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+}
+
+.col-md-1{
+    margin-right: 50px;
+    text-wrap: wrap;
+}
+
