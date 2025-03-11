@@ -4,10 +4,25 @@
             <img src="assets/icons/leaf.png" alt="Leaf Icon" width="18" height="16">
             <p class="mb-0 fw-semibold gray">Let's order fresh items for you.</p>
         </div>
-        <div class="d-flex gap-2">
-            <button type="button" class="btn btn-outline-purple px-3" data-bs-toggle="modal"
-                data-bs-target="#signupModal">Signup</button>
-            <button class="btn btn-solid-purple px-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+        <div class="d-flex gap-2 align-items-center ps-3">
+            <!-- Auth Buttons -->
+            <div class="btn-container">
+                <button type="button" class="btn btn-outline-purple px-3" data-bs-toggle="modal"
+                    data-bs-target="#signupModal">Signup</button>
+                <button class="btn btn-solid-purple px-3" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button>
+            </div>
+            <!-- Profile -->
+            <div class="profile-container dropdown border-start">
+                <button class="btn dropdown-toggle d-flex align-items-center gap-1 border-0" type="button"
+                    id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/assets/img/profile.jpg" alt="Profile Icon" width="30" height="30" class="rounded-circle">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
@@ -76,7 +91,7 @@
             <div class="modal-body p-0 d-flex">
                 <div class="p-4 flex-grow-1">
                     <img src="assets/icons/nav-logo.svg" alt="Icon" width="36" height="51">
-                    
+
                     <div class="my-4 d-flex">
                         <img src="/assets/icons/auth-smile.svg" alt="Smile Icon">
                         <p class="mb-0 fw-semibold text-muted ms-2 small">Login to order.</p>
@@ -88,7 +103,7 @@
                     </div>
 
                     <form>
-                        <div class="row g-3">  
+                        <div class="row g-3">
                             <div class="col-12">
                                 <input type="email" class="form-control" id="loginEmail" placeholder="Email">
                             </div>
