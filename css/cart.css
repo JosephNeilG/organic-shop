@@ -1,0 +1,21 @@
+* {
+    /* outline: 1px solid red; */
+}
+
+.cart li img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.cart h6 {
+    color: #7D7D7D;
+}
+
+.cart p {
+    color: #7971D9 !important;
+}
+
+.cart .text-bg-secondary {
+    
+}
