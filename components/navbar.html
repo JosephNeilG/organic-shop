@@ -14,7 +14,7 @@
                     data-bs-target="#loginModal">Login</button>
             </div>
             <!-- Profile -->
-            <div class="profile-container dropdown border-start">
+            <div class="profile-container dropdown border-start d-none">
                 <button class="btn dropdown-toggle d-flex align-items-center gap-1 border-0" type="button"
                     id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/assets/img/profile.jpg" alt="Profile Icon" width="30" height="30" class="rounded-circle">
@@ -48,23 +48,29 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" id="signupFirstName" placeholder="First Name">
+                                <p id="firstNameValidation" class="text-danger small mb-0 d-none"></p>
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" id="signupLastName" placeholder="Last Name">
+                                <p id="lastNameValidation" class="text-danger small mb-0 d-none"></p>
                             </div>
                             <div class="col-12">
-                                <input type="email" class="form-control" id="signupEmail" placeholder="Email">
+                                <input type="text" class="form-control" id="signupEmail" placeholder="Email">
+                                <p id="emailValidation" class="text-danger small mb-0 d-none"></p>
                             </div>
                             <div class="col-12">
                                 <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                                <p id="passwordValidation" class="text-danger small mb-0 d-none"></p>
                             </div>
                             <div class="col-12 mb-2">
                                 <input type="password" class="form-control" id="signupConfirmPassword"
-                                    placeholder="Confirm password">
+                                    placeholder="Confirm Password">
+                                <p id="confirmPasswordValidation" class="text-danger small mb-0 d-none"></p>
                             </div>
                         </div>
                         <div class="border-top mt-4 pt-3">
-                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Signup</button>
+                            <button id="signupBtn" type="submit"
+                                class="btn btn-solid-purple w-100 mb-2 mt-3">Signup</button>
                         </div>
                     </form>
                 </div>
@@ -102,19 +108,22 @@
                         </p>
                     </div>
 
-                    <form>
+                    <form id="loginForm">
                         <div class="row g-3">
                             <div class="col-12">
-                                <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                                <input type="text" class="form-control" id="loginEmail" placeholder="Email">
+                                <p id="emailValidationLogin" class="text-danger small mb-0 d-none"></p>
                             </div>
                             <div class="col-12 mb-2">
                                 <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                <p id="passwordValidationLogin" class="text-danger small mb-0 d-none"></p>
                             </div>
                         </div>
                         <div class="border-top mt-4 pt-3">
-                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Login</button>
+                            <button id="loginBtn" type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Login</button>
                         </div>
                     </form>
+                    
                 </div>
 
                 <div class="d-md-block position-relative">
