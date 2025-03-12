@@ -84,7 +84,7 @@ const products = [
     {
         name: "Striploin",
         price: "₱ 880",
-        img: "assets/img/beef/Striploin.png",
+        img: "assets/img/beef/Striploin.jpeg",
         rating: 4, description: "This boneless Striploin is becoming a favorite of many steak lovers due to its appetizing meat flavor and its tenderness throughout. The characteristic strip of fat gives it an extra succulent flavour."
     },
     {
