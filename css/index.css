@@ -39,6 +39,10 @@ body,
     color: #ADA9C0;
 }
 
+.purple {
+    color: #9C89FF;
+}
+
 .input-group input::placeholder,
 .input-group input {
     color: #ADA9C0;
@@ -48,4 +52,35 @@ body,
 section form .input-group,
 section div a {
     height: 40px;
+}
+
+form div .form-control {
+    border: 1px solid #9d89ff65;
+    font-size: 13px;
+}
+
+form div .form-control::placeholder {
+    color: #ADA9C0;
+    font-size: 14px;
+}
+
+.auth-img,
+.login-img {
+    object-fit: cover;
+}
+
+.auth-img {
+    width: 220px;
+}
+
+.login-img {
+    width: 120px;
+}
+
+.auth-overlay {
+    max-width: 100px;
+}
+
+.link-hover:hover {
+    color: #6956ca;
 }

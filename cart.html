@@ -19,72 +19,167 @@
             <div id="navbar"></div> <!-- navbar load  -->
             <div id="search-cart"></div> <!-- search at cart load  -->
 
-
-            <div class="container mt-4">
-                <div class="row gap-5">
-                    <!-- Cart Items (60%) -->
-                    <div class="col-lg-7">
-                        <h2>Shopping Cart</h2>
-                        <ul class="cart list-group">
-                            <li class="list-group-item d-flex align-items-center justify-content-between p-0">
-                                <!-- Product Image -->
-                                <img src="assets/img/product-1.jpg" alt="Product" class="img-fluid rounded">
-
-                                <!-- Product Info -->
+            <div class="container border-top">
+                <div class="row gap-5 mt-4">
+                    <!-- Cart Items Section -->
+                    <section class="col-lg-7">
+                        <ul class="cart list-group gap-2">
+                            <li class="list-group-item d-flex align-items-center p-0 shadow rounded-4">
+                                <img src="assets/img/sample1.jpg" alt="Product" class="img-fluid rounded-4">
                                 <div class="ms-4 flex-grow-1">
-                                    <h6 class="mb-1 gray">Vegetables</h6>
-                                    <p class="badge text-bg-secondary-subtle mb-0">$20.00</p>
+                                    <h6 class="mb-2 text-secondary">Vegetables</h6>
+                                    <p class="badge bg-secondary-subtle rounded-4 py-1 px-2">$ 20</p>
                                 </div>
 
-                                <!-- Quantity Input -->
-                                <div class="me-3">
-                                    <input type="number" class="form-control text-center" style="width: 60px;"
-                                        value="1">
+                                <div class="d-flex gap-4 me-4">
+                                    <div class="d-flex flex-column">
+                                        <label for="quantity" class="text-muted mb-1">Quantity</label>
+                                        <input type="number" id="quantity" class="form-control" value="1">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <label for="total-price" class="text-muted mb-1">Total Amount</label>
+                                        <p id="total-price" class="badge bg-secondary-subtle rounded custom-p fw-bold">
+                                            $20</p>
+                                    </div>
                                 </div>
-
-                                <!-- Total Price -->
-                                <div class="me-3 fw-bold">
-                                    $20.00
-                                </div>
-
-                                <!-- Remove Button with Border -->
-                                <div class="border-start ps-3">
-                                    <button class="btn btn-danger btn-sm">
-                                        <i class="bi bi-x"></i>
-                                    </button>
+                                <!-- Remove Button -->
+                                <div class="px-3 py-5 border-start">
+                                    <button type="button" class="btn-close" aria-label="Remove Item"></button>
                                 </div>
                             </li>
+                            <li class="list-group-item text-center p-5 shadow rounded-4">
+                                <h6 class="mb-3">There are no items in this cart.</h6>
+                                <a href="/index.html" class="btn btn-outline-purple">Continue Shopping</a>
+                            </li>
                         </ul>
+                    </section>
+
+                    <!-- Shipping Information Section -->
+                    <aside class="col-lg-4">
+                        <h6 class="text-muted">Shipping Information</h6>
+                        <form class="row g-3 mt-2">
+                            <div class="col-md-6">
+                                <label for="first-name" class="visually-hidden">First Name</label>
+                                <input type="text" id="first-name" class="form-control bg-transparent"
+                                    placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last-name" class="visually-hidden">Last Name</label>
+                                <input type="text" id="last-name" class="form-control bg-transparent"
+                                    placeholder="Last Name">
+                            </div>
+                            <div class="col-12">
+                                <label for="address" class="visually-hidden">Address</label>
+                                <input type="text" id="address" class="form-control bg-transparent"
+                                    placeholder="1234 Main St">
+                            </div>
+                            <div class="col-12">
+                                <label for="address2" class="visually-hidden">Apartment, Studio, or Floor</label>
+                                <input type="text" id="address2" class="form-control bg-transparent"
+                                    placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="city" class="visually-hidden">City</label>
+                                <input type="text" id="city" class="form-control bg-transparent" placeholder="City">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="province" class="visually-hidden">Province</label>
+                                <input type="text" id="province" class="form-control bg-transparent"
+                                    placeholder="Province">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="zip" class="visually-hidden">Zip Code</label>
+                                <input type="number" id="zip" class="form-control bg-transparent"
+                                    placeholder="Zip Code">
+                            </div>
+
+                            <!-- Order Summary -->
+                            <div class="col-12">
+                                <p class="mb-2 text-muted fw-semibold">Order Summary</p>
+                                <div class="d-flex mb-2">
+                                    <p class="small text-muted mb-0">Items</p>
+                                    <p class="small ms-auto text-light-emphasis mb-0">$40</p>
+                                </div>
+                                <div class="d-flex border-bottom pb-3 mb-3">
+                                    <p class="small text-muted mb-0">Shipping Fee</p>
+                                    <p class="small ms-auto text-light-emphasis mb-0">$5</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <p class="small text-muted mb-0">Total Amount</p>
+                                    <p class="ms-auto price mb-0 fw-semibold purple">$45</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn w-100 btn-solid-purple py-2" data-bs-toggle="modal"
+                                    data-bs-target="#checkoutModal">Proceed to Checkout</button>
+                            </div>
+                        </form>
+                    </aside>
+                    <!-- Login Modal -->
+                    <!-- Checkout Modal -->
+                    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content border-0 shadow">
+                                <div class="modal-body p-4">
+                                    <!-- Header: Logo & Card Brand -->
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <img src="assets/icons/nav-logo.svg" alt="App Logo" height="40">
+                                        <img src="assets/img/card-logo.svg" alt="Card Logo" height="25">
+                                    </div>
+
+                                    <!-- Card Details Title -->
+                                    <p class="fw-semibold text-muted small my-3">Card Details</p>
+
+                                    <!-- Payment Form -->
+                                    <form>
+                                        <div class="row g-3">
+                                            <!-- Card Name -->
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" id="cardName"
+                                                    placeholder="Cardholder Name">
+                                            </div>
+
+                                            <!-- Card Number -->
+                                            <div class="col-12">
+                                                <input type="number" class="form-control" id="cardNumber"
+                                                    placeholder="Card Number">
+                                            </div>
+
+                                            <!-- Expiration & CVV -->
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="cardExpiration"
+                                                    placeholder="MM/YY">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" id="cardCVV"
+                                                    placeholder="CVV">
+                                            </div>
+                                        </div>
+
+                                        <!-- Total Amount & Pay Button -->
+                                        <div class="border-top mt-4 pt-3">
+                                            <p class="small text-muted mb-3 text-end">
+                                                Total Amount: <span class="ms-3 purple fw-semibold fs-5">$45</span>
+                                            </p>
+                                            <button type="submit" class="btn btn-solid-purple w-100 py-2">Pay</button>
+                                        </div>
+                                    </form>
+
+                                    <!-- Close Button -->
+                                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Shipping Information (40%) -->
-                    <div class="col-lg-4">
-                        <h2>Shipping Information</h2>
-                        <form>
-                            <div class="mb-3">
-                                <label for="fullName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="Enter your address">
-                            </div>
-                            <div class="mb-3">
-                                <label for="city" class="form-label">City</label>
-                                <input type="text" class="form-control" id="city" placeholder="Enter your city">
-                            </div>
-                            <div class="mb-3">
-                                <label for="zip" class="form-label">ZIP Code</label>
-                                <input type="text" class="form-control" id="zip" placeholder="Enter ZIP code">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
-                        </form>
-                    </div>
                 </div>
             </div>
-
+        </main>
     </div>
-    <script src="js/products.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="js/components.js"></script>
 </body>
 

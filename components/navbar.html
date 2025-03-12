@@ -4,9 +4,130 @@
             <img src="assets/icons/leaf.png" alt="Leaf Icon" width="18" height="16">
             <p class="mb-0 fw-semibold gray">Let's order fresh items for you.</p>
         </div>
-        <div class="d-flex gap-2">
-            <button class="btn btn-outline-purple px-3" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</button>
-            <button class="btn btn-solid-purple px-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+        <div class="d-flex gap-2 align-items-center ps-3">
+            <!-- Auth Buttons -->
+            <div class="btn-container">
+                <button type="button" class="btn btn-outline-purple px-3" data-bs-toggle="modal"
+                    data-bs-target="#signupModal">Signup</button>
+                <button class="btn btn-solid-purple px-3" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button>
+            </div>
+            <!-- Profile -->
+            <div class="profile-container dropdown border-start">
+                <button class="btn dropdown-toggle d-flex align-items-center gap-1 border-0" type="button"
+                    id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/assets/img/profile.jpg" alt="Profile Icon" width="30" height="30" class="rounded-circle">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
+
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-body p-0 d-flex">
+                <div class="p-4 flex-grow-1">
+                    <img src="assets/icons/nav-logo.svg" alt="Icon" width="36" height="51">
+                    <div class="my-4 d-flex">
+                        <img src="/assets/icons/auth-smile.svg" alt="Smile Icon">
+                        <p class="mb-0 fw-semibold text-muted ms-2 small">Signup to order.</p>
+                        <p class="purple small mb-0 ms-auto">
+                            Already a member?
+                            <a href="#" class="text-decoration-none purple link-hover" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Login here.</a>
+                        </p>
+                    </div>
+
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="signupFirstName" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="signupLastName" placeholder="Last Name">
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Email">
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="password" class="form-control" id="signupConfirmPassword"
+                                    placeholder="Confirm password">
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Signup</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-md-block position-relative">
+                    <img src="/assets/img/auth-form-img.jpg" alt="Signup Image"
+                        class="auth-img img-fluid h-100 rounded-end">
+                    <img src="/assets/img/auth-overlay.svg" alt="Overlay"
+                        class="auth-overlay position-absolute bottom-0 end-0 rounded-end">
+
+                    <button type="button"
+                        class="btn-close bg-white rounded-circle p-2 position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-body p-0 d-flex">
+                <div class="p-4 flex-grow-1">
+                    <img src="assets/icons/nav-logo.svg" alt="Icon" width="36" height="51">
+
+                    <div class="my-4 d-flex">
+                        <img src="/assets/icons/auth-smile.svg" alt="Smile Icon">
+                        <p class="mb-0 fw-semibold text-muted ms-2 small">Login to order.</p>
+                        <p class="purple small mb-0 ms-auto">
+                            New member?
+                            <a href="#" class="text-decoration-none purple link-hover" data-bs-toggle="modal"
+                                data-bs-target="#signupModal">Register here.</a>
+                        </p>
+                    </div>
+
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <button type="submit" class="btn btn-solid-purple w-100 mb-2 mt-3">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-md-block position-relative">
+                    <img src="/assets/img/auth-form-img.jpg" alt="Signup Image"
+                        class="login-img img-fluid h-100 rounded-end">
+                    <img src="/assets/img/auth-overlay.svg" alt="Overlay"
+                        class="auth-overlay position-absolute bottom-0 end-0 rounded-end">
+
+                    <button type="button"
+                        class="btn-close bg-white rounded-circle p-2 position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
