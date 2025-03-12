@@ -38,6 +38,12 @@ figure {
     height: 87px;
     border-radius: 10px;
     object-fit: cover;
+    cursor: pointer;   
+}
+
+.sub-img:hover{
+    border: 2px solid #9C89FF;
+    background-color: #f2efff;
 }
 
 .title-section {
@@ -115,11 +121,14 @@ figure {
     text-align: center;
 }
 
+.quantity input{
+    font-weight: 400;
+    color: #A1A1A1;
+}
 .total-amount input {
     background-color: #F6F6F6;
-}
-.total-amount ::placeholder {
     color: #8B5CF6;
+    font-weight: 700;
 }
 
 .btn-add-to-cart {
