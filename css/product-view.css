@@ -1,6 +1,3 @@
-/* *{
-    outline: 1px solid red;
-} */
 
 .all-products-wrapper {
     display: flex;
@@ -27,6 +24,11 @@ figure {
     object-fit: cover;
 
 }
+
+.sub-img-container {
+    display: flex;
+}
+
 .sub-img {
     align-items: left;
     margin: 5px;
@@ -98,7 +100,7 @@ figure {
 }
 .values-text {
     margin: 0;
-    padding: 10px 0px 0px;
+    padding: 5px 0px;
 }
 .main-values form {
     display: flex;
@@ -112,10 +114,7 @@ figure {
     border: 1px solid #D4E1EC;
     text-align: center;
 }
-.total-amount p {
-    padding-top: 6px;
-    padding-bottom: 4px;
-}       
+
 .total-amount input {
     background-color: #F6F6F6;
 }
@@ -157,7 +156,7 @@ figure {
 .similar-items ul {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     padding: 0;
     gap: 11px;
 }
