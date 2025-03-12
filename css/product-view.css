@@ -1,6 +1,11 @@
+/* *{
+    outline: 1px solid red;
+} */
+
 .all-products-wrapper {
     display: flex;
     gap: 10px;
+    text-decoration: none;
 }
 
 .main-product-container {
@@ -10,6 +15,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     background-color: white;
     padding-bottom: 30px;
+}
+
+figure {
+    margin: 0;
 }
 .main-img {
     width: 378px;
@@ -55,6 +64,7 @@
     display: flex;
     align-items: center;
     margin-bottom: .5rem;
+    gap: 1px;
 }
 
 .rating img {
@@ -64,6 +74,7 @@
 
 .rating p {
     margin: 0;
+    padding-left: 5px;
 }
 
 .price {
@@ -148,7 +159,6 @@
     width: 26px;
     height: 26px    ;
     border-radius: 5px;
-
 }
 
 .similar-items {
@@ -165,7 +175,7 @@
     list-style-type: none;
     border-radius: 20px;
     background-color: white;
-}
+}   
 
 
 .similar-items-flex {
