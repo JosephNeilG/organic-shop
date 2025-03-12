@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     quantityInput.addEventListener("input", function () {
         let quantity = parseInt(quantityInput.value) || 1;
-        let price = parseFloat(product.price.replace("$", ""));
-        totalAmount.value = "$" + (quantity * price).toFixed(2);
+        let price = parseFloat(product.price.replace("₱", ""));
+        totalAmount.value = "₱" + (quantity * price).toFixed(2);
     });
 });

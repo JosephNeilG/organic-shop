@@ -144,23 +144,6 @@ figure {
     height: 16px;
 }
 
-.arrow-keys {
-    display: flex;
-    flex-direction: column;
-    background-color: #F6F6F6;
-    margin: 5px 5px;
-    padding: 8px 7px;
-    border-radius: 5px;
-    
-}
-
-.arrow-keys img {
-    padding: 8px;
-    width: 26px;
-    height: 26px    ;
-    border-radius: 5px;
-}
-
 .similar-items {
     margin-top: 60px;
 }
