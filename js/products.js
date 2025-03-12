@@ -1,103 +1,103 @@
 const products = [
     {
         name: "Cranberries",
-        price: "$10.00",
+        price: "₱ 460",
         img: "assets/img/fruits/Cranberries.jpeg",
         rating: 4,
-        description: "Fresh and juicy cranberries."
+        description: "Imported from Europe, these cranberries were harvested when ripe and then individually quick-frozen to make sure that their freshness is preserved all the way to your door. Cranberries are sweet, tart, and rich in vitamins and antioxidants, which makes them ideal for healthy smoothies, juices, sauces, and jams that have a bit of a sour kick!"
     },
     {
         name: "Strawberries",
-        price: "$10.00",
+        price: "₱ 175",
         img: "assets/img/fruits/Strawberries.jpeg",
         rating: 4,
-        description: "Sweet and ripe strawberries."
+        description: "Enjoy the convenience – no need to thaw! Simply toss these frozen berries straight into your blender for delicious smoothies, or use them as a delightful topping or ingredient for countless desserts and sauces, such as classic strawberry shortcake, homemade ice cream, jams, and cheesecakes. These versatile berries are one of the keys to unleash your culinary creativity."
     },
     {
         name: "Mixed Berries",
-        price: "$10.00",
+        price: "₱ 220",
         img: "assets/img/fruits/Mixedberries.jpeg",
         rating: 4,
-        description: "A delicious mix of berries."
+        description: "A cocktail of berries of whole red fruits, the varieties of which have been selected for their taste quality: Blackberries, Blueberries, Raspberries, Strawberries and Redcurrants. Picked when ripe then sorted, cleaned, and frozen to retain all the benefits. Mixed berries are an excellent source of antioxidants and fiber. They are also high in nutrients, low in calories, and a good source of vitamin C."
     },
     {
         name: "Raspberries",
-        price: "$10.00",
+        price: "₱ 399",
         img: "assets/img/fruits/Raspberries.jpeg",
         rating: 4,
-        description: "Tart and tasty raspberries."
+        description: "Juicy, antioxidant-packed raspberries of pure, sweet taste, are now available all year round with our frozen variant. Harvested at the peak of ripeness, these whole berries are flash-frozen to lock in their vibrant color, juicy texture, and wonderful flavor."
     },
     {
         name: "Blackcurrants",
-        price: "$10.00",
+        price: "₱ 325",
         img: "assets/img/fruits/Black.jpeg",
         rating: 4,
-        description: "Rich in antioxidants, perfect for smoothies."
+        description: "Fresh blackcurrant fruits gathered ripe and then individually quick-frozen before being de-stemmed, to guarantee peak freshness and quality. Discover the vibrant burst of flavor and nutrition with our exquisite blackcurrants from France. Tangy-sweet berries packed with vitamin C and antioxidants offer a delicious and healthy way to add a unique twist to your recipes."
     },
     {
         name: "Carrots",
-        price: "$10.00",
+        price: "₱ 220",
         img: "assets/img/veg/BabyCarrots.jpeg",
         rating: 4,
-        description: "Crunchy and sweet baby carrots."
+        description: "Sweet, firm, and perfectly sized carrots ideal for eating with dips, mixing into salads, or enjoying as a nutritious snack. Carrots are known for their high content of beta-carotene, which is converted into vitamin A in the body. This essential nutrient supports good vision, a strong immune system, and healthy skin. Additionally, baby carrots are low in calories and high in fiber, making them a great choice for weight management and digestive health."
     },
     {
         name: "Broccoli",
-        price: "$10.00",
+        price: "₱ 199",
         img: "assets/img/veg/Broccoli.jpeg",
-        rating: 4, description: "Fresh green broccoli, rich in vitamins."
+        rating: 4, description: "Enjoy the garden-fresh taste and nutritional power of broccoli all year round with our premium broccoli florets. Harvested at peak ripeness, our broccoli is meticulously washed, trimmed, blanched, and frozen within hours to preserve its vibrant color, crisp texture, and essential nutrients."
     },
     {
         name: "Brussels Sprouts",
-        price: "$10.00",
+        price: "₱ 145",
         img: "assets/img/veg/BrusselsSprouts.jpeg",
-        rating: 4, description: "Healthy and nutritious Brussels sprouts."
+        rating: 4, description: "Skip the prep work and enjoy the benefits with this flash-frozen option. Packed with essential vitamins and antioxidants, these frozen Brussels sprouts are a healthy and delicious way to boost your meals."
     },
     {
         name: "Green Peas",
-        price: "$10.00",
+        price: "₱ 320",
         img: "assets/img/veg/Green Peas.jpeg",
         rating: 4,
-        description: "Sweet green peas, perfect for any dish."
+        description: "Peas add a pop of sweetness and a delightful pop of color and texture to your dishes. And most importantly, they are a nutrient powerhouse. As part of the legume family, green peas are packed with essential nutrients like protein, fiber, vitamins A, C, K, iron, and more."
     },
     {
         name: "Cordon Bleu",
-        price: "$10.00",
+        price: "₱ 620",
         img: "assets/img/pork/cordon-bleu.jpeg",
         rating: 4,
-        description: "Delicious crispy chicken cordon bleu."
+        description: "Enjoy the more convenient version of this classic recipe, a combination of pork, ham, and melted Swiss cheese rolled in golden crispy breadcrumbs. Simple and delicious, a favorite among people of all ages. It is one of the foolproof dishes one can serve on any occasion."
     },
     {
         name: "Loin Steak",
-        price: "$10.00",
+        price: "₱ 699",
         img: "assets/img/pork/loin-steaks.jpeg",
         rating: 4,
-        description: "Juicy and tender pork loin steak."
+        description: "Protein-packed and easy-to-prepare meals are a breeze with these boneless pork steaks. Lean, tender, and versatile, these are perfect for a variety of cooking methods - fry, braise, grill, or bake – these steaks adapt to your preferred cooking style."
     },
     {
         name: "Ribeye Steak",
-        price: "$10.00",
+        price: "₱ 1580",
         img: "assets/img/beef/RibeyeSteak.jpeg",
         rating: 4,
-        description: "Premium quality ribeye steak."
+        description: "The ultimate steakhouse experience: tender, juicy, and robust - only with our Certified Angus Beef® Ribeye Steak. This prime cut, sourced from the heart of the rib, is renowned for its exceptional marbling, ensuring a tender and flavorful eating experience."
     },
     {
         name: "Striploin",
-        price: "$10.00",
+        price: "₱ 880",
         img: "assets/img/beef/Striploin.png",
-        rating: 4, description: "Perfectly marbled striploin steak."
+        rating: 4, description: "This boneless Striploin is becoming a favorite of many steak lovers due to its appetizing meat flavor and its tenderness throughout. The characteristic strip of fat gives it an extra succulent flavour."
     },
     {
         name: "Chicken Cordon",
-        price: "$10.00",
+        price: "₱ 340",
         img: "assets/img/poultry/chicken-cordon.jpeg",
-        rating: 4, description: "Savory and crispy chicken cordon bleu."
+        rating: 4, description: "Enjoy the convenient, ready-to-cook version of this classic combination of chicken, bacon, and melted cheese rolled in golden crispy breadcrumbs - a simple and delicious favorite among people of all ages."
     },
     {
         name: "Duck Liver",
-        price: "$10.00",
+        price: "₱ 4600",
         img: "assets/img/poultry/duck-liver.jpeg",
-        rating: 4, description: "Rich and flavorful duck liver."
+        rating: 4, description: "Duck foie gras has been a delicacy in French culinary tradition for centuries. It has a pronounced taste of distinct texture and flavor and is uncompromisingly rich with its high-fat content."
     },
 ];
 
