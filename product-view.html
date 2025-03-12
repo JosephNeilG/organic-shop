@@ -75,19 +75,20 @@
                                 <div class="quantity">
                                     <p class="values-text">Quantity</p>
                                     <form>
-                                        <input class="quantity-input" type="number" name="number"/>
+                                        <input class="quantity-input" type="number" name="number" />
                                     </form>
                                 </div>
 
                                 <div class="total-amount">
                                     <p class="values-text">Total Amount</p>
                                     <form>
-                                        <input type="text" name="number" disabled/>
+                                        <input type="text" name="number" disabled />
                                     </form>
                                 </div>
 
-                                <a class="btn-add-to-cart" href="#"><img src="assets/icons/cart.png" 
-                                    alt="Cart" />Add to Cart</a>
+                                <a class="btn-add-to-cart" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#cartModal"><img src="assets/icons/cart.png" alt="Cart" />Add to
+                                    Cart</a>
                             </div>
                         </figure>
                     </section>
@@ -98,7 +99,7 @@
                     <ul>
                         <li>
                             <img class="similar-items-img" src="assets/product-view-img/vegetables/frozen-edamame.jpeg"
-                            alt="Frozen Edamame" />
+                                alt="Frozen Edamame" />
                             <figure class="similar-items-flex">
                                 <div>
                                     <h6>Frozen Edamame</h6>
@@ -116,7 +117,7 @@
                         </li>
                         <li>
                             <img class="similar-items-img" src="assets/product-view-img/vegetables/french-fries.jpeg"
-                            alt="French Fries" />
+                                alt="French Fries" />
                             <figure class="similar-items-flex">
                                 <div>
                                     <h6>French Fries</h6>
@@ -133,8 +134,8 @@
                             </figure>
                         </li>
                         <li>
-                            <img class="similar-items-img" src="assets/product-view-img/vegetables/mixed-vegetables.jpeg"
-                            alt="Mixed Vegetables" />
+                            <img class="similar-items-img"
+                                src="assets/product-view-img/vegetables/mixed-vegetables.jpeg" alt="Mixed Vegetables" />
                             <figure class="similar-items-flex">
                                 <div>
                                     <h6>Mixed Vegetable</h6>
@@ -151,8 +152,8 @@
                             </figure>
                         </li>
                         <li>
-                            <img class="similar-items-img" src="assets/product-view-img/vegetables/frozen-artichoke.jpeg"
-                            alt="Frozen Artichoke" />
+                            <img class="similar-items-img"
+                                src="assets/product-view-img/vegetables/frozen-artichoke.jpeg" alt="Frozen Artichoke" />
                             <figure class="similar-items-flex">
                                 <div>
                                     <h6>Vegetables</h6>
@@ -170,7 +171,7 @@
                         </li>
                         <li>
                             <img class="similar-items-img" src="assets/product-view-img/vegetables/frozen-broccoli.jpeg"
-                            alt="Frozen Broccoli" />
+                                alt="Frozen Broccoli" />
                             <figure class="similar-items-flex">
                                 <div>
                                     <h6>Vegetables</h6>
@@ -190,9 +191,28 @@
                 </section>
             </div>
         </main>
+        <!-- Modal -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-4">
+                    <div class="modal-header border-0 d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3 px-2 py-3">
+                            <img src="assets/icons/cart-modal-icon.svg" alt="Check Icon" width="28" height="28">
+                            <p class="modal-title fw-semibold text-muted mb-0" id="cartModalLabel">Added to cart
+                                successfully!</p>
+                        </div>
+                        <button type="button" class="btn-close small-btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <script src="js/product-view.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="js/products.js"></script>
     <script src="js/components.js"></script>
 </body>
