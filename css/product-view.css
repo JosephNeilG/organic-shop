@@ -97,7 +97,7 @@ figure {
 }
 .values-text {
     margin: 0;
-    padding: 10px 0px 0px;
+    padding: 5px 0px;
 }
 .main-values form {
     display: flex;
@@ -111,10 +111,7 @@ figure {
     border: 1px solid #D4E1EC;
     text-align: center;
 }
-.total-amount p {
-    padding-top: 6px;
-    padding-bottom: 4px;
-}       
+
 .total-amount input {
     background-color: #F6F6F6;
 }
