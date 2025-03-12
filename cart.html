@@ -19,9 +19,8 @@
             <div id="navbar"></div> <!-- navbar load  -->
             <div id="search-cart"></div> <!-- search at cart load  -->
 
-            <div class="container border-top">
+            <div class="container border-top vh-100">
                 <div class="row gap-5 mt-4">
-                    <!-- Cart Items Section -->
                     <section class="col-lg-7">
                         <ul class="cart list-group gap-2">
                             <li class="list-group-item d-flex align-items-center p-0 shadow rounded-4">
@@ -42,7 +41,7 @@
                                             $20</p>
                                     </div>
                                 </div>
-                                <!-- Remove Button -->
+
                                 <div class="px-3 py-5 border-start">
                                     <button type="button" class="btn-close" aria-label="Remove Item"></button>
                                 </div>
@@ -54,46 +53,44 @@
                         </ul>
                     </section>
 
-                    <!-- Shipping Information Section -->
+                    <!-- Shipping Info Form -->
                     <aside class="col-lg-4">
                         <h6 class="text-muted">Shipping Information</h6>
                         <form class="row g-3 mt-2">
                             <div class="col-md-6">
-                                <label for="first-name" class="visually-hidden">First Name</label>
                                 <input type="text" id="first-name" class="form-control bg-transparent"
                                     placeholder="First Name">
+                                <p id="firstNameValidation" class="text-danger small mb-0"></p>
                             </div>
                             <div class="col-md-6">
-                                <label for="last-name" class="visually-hidden">Last Name</label>
                                 <input type="text" id="last-name" class="form-control bg-transparent"
                                     placeholder="Last Name">
+                                <p id="lastNameValidation" class="text-danger small mb-0"></p>
                             </div>
                             <div class="col-12">
-                                <label for="address" class="visually-hidden">Address</label>
                                 <input type="text" id="address" class="form-control bg-transparent"
                                     placeholder="1234 Main St">
+                                <p id="addressValidation" class="text-danger small mb-0"></p>
                             </div>
                             <div class="col-12">
-                                <label for="address2" class="visually-hidden">Apartment, Studio, or Floor</label>
                                 <input type="text" id="address2" class="form-control bg-transparent"
                                     placeholder="Apartment, studio, or floor">
                             </div>
                             <div class="col-md-4">
-                                <label for="city" class="visually-hidden">City</label>
                                 <input type="text" id="city" class="form-control bg-transparent" placeholder="City">
+                                <p id="cityValidation" class="text-danger small mb-0"></p>
                             </div>
                             <div class="col-md-4">
-                                <label for="province" class="visually-hidden">Province</label>
                                 <input type="text" id="province" class="form-control bg-transparent"
                                     placeholder="Province">
+                                <p id="provinceValidation" class="text-danger small mb-0"></p>
                             </div>
                             <div class="col-md-4">
-                                <label for="zip" class="visually-hidden">Zip Code</label>
                                 <input type="number" id="zip" class="form-control bg-transparent"
                                     placeholder="Zip Code">
+                                <p id="zipValidation" class="text-danger small mb-0"></p>
                             </div>
 
-                            <!-- Order Summary -->
                             <div class="col-12">
                                 <p class="mb-2 text-muted fw-semibold">Order Summary</p>
                                 <div class="d-flex mb-2">
@@ -110,69 +107,85 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="button" class="btn w-100 btn-solid-purple py-2" data-bs-toggle="modal"
-                                    data-bs-target="#checkoutModal">Proceed to Checkout</button>
+                                <button id="checkoutBtn" type="button" class="btn w-100 btn-solid-purple py-2">Proceed
+                                    to Checkout</button>
                             </div>
                         </form>
                     </aside>
-                    <!-- Login Modal -->
-                    <!-- Checkout Modal -->
+
+                    <!-- Checkout/Payment Form Modal -->
                     <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModal">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content border-0 shadow">
                                 <div class="modal-body p-4">
-                                    <!-- Header: Logo & Card Brand -->
                                     <div class="d-flex gap-3 align-items-center">
                                         <img src="assets/icons/nav-logo.svg" alt="App Logo" height="40">
                                         <img src="assets/img/card-logo.svg" alt="Card Logo" height="25">
                                     </div>
 
-                                    <!-- Card Details Title -->
                                     <p class="fw-semibold text-muted small my-3">Card Details</p>
 
-                                    <!-- Payment Form -->
                                     <form>
                                         <div class="row g-3">
-                                            <!-- Card Name -->
                                             <div class="col-12">
                                                 <input type="text" class="form-control" id="cardName"
                                                     placeholder="Cardholder Name">
+                                                <p id="nameValidation" class="text-danger small mb-0"></p>
                                             </div>
 
-                                            <!-- Card Number -->
                                             <div class="col-12">
                                                 <input type="number" class="form-control" id="cardNumber"
                                                     placeholder="Card Number">
+                                                <p id="numberValidation" class="text-danger small mb-0"></p>
                                             </div>
 
-                                            <!-- Expiration & CVV -->
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" id="cardExpiration"
-                                                    placeholder="MM/YY">
+                                                    placeholder="Expiration (MM/YY)">
+                                                <p id="expirationValidation" class="text-danger small mb-0"></p>
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="number" class="form-control" id="cardCVV"
                                                     placeholder="CVV">
+                                                <p id="cvvValidation" class="text-danger small mb-0"></p>
                                             </div>
                                         </div>
 
-                                        <!-- Total Amount & Pay Button -->
                                         <div class="border-top mt-4 pt-3">
                                             <p class="small text-muted mb-3 text-end">
                                                 Total Amount: <span class="ms-3 purple fw-semibold fs-5">$45</span>
                                             </p>
-                                            <button type="submit" class="btn btn-solid-purple w-100 py-2">Pay</button>
+                                            <button id="payBtn" type="submit"
+                                                class="btn btn-solid-purple w-100 py-2">Pay</button>
                                         </div>
                                     </form>
 
-                                    <!-- Close Button -->
-                                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button id="payBtn" type="button"
+                                        class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Payment success modal -->
+                    <div class="modal fade" id="checkoutConfirmation" tabindex="-1" aria-labelledby="cartModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content rounded-4">
+                                <div class="modal-header border-0 d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center gap-3 px-2 py-3">
+                                        <img src="assets/icons/cart-modal-icon.svg" alt="Check Icon" width="28"
+                                            height="28">
+                                        <p class="modal-title fw-semibold text-muted mb-0" id="cartModalLabel">Payment
+                                            Successful!</p>
+                                    </div>
+                                    <button type="button" class="btn-close small-btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -181,6 +194,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="js/components.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
