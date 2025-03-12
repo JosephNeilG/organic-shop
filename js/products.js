@@ -113,8 +113,8 @@ products.forEach((product, index) => {
                 <img src="${product.img}" class="card-img-top rounded-top-3" alt="${product.name}">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h6 class="card-title mb-0">${product.name}</h6>
-                        <span class="fw-bold">${product.price}</span>
+                        <h6 class="card-title mb-0 small text-muted">${product.name}</h6>
+                        <span class="fw-semibold purple bg-secondary-subtle rounded-4 px-2 py-1 small">${product.price}</span>
                     </div>
                     <div class="text-warning">${stars}</div>
                 </div>
