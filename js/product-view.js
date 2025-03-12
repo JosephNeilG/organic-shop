@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const product = JSON.parse(localStorage.getItem("selectedProduct"));
 
-    // Set main product details
+    // set main product details
     document.querySelector(".main-img").src = product.img;
     document.querySelector(".main-img").alt = product.name;
     document.querySelector(".details-container h3").textContent = product.name;
     document.querySelector(".price").textContent = product.price;
     document.querySelector(".description").textContent = product.description;
 
-    // Generate star ratings
+    // generate star ratings
     const ratingContainer = document.querySelector(".rating");
     ratingContainer.innerHTML = "";
     for (let i = 0; i < 5; i++) {
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityInput = document.querySelector(".quantity-input");
     const totalAmount = document.querySelector(".total-amount input");
     const price = parseFloat(product.price.replace("₱", ""));
+  
 
     quantityInput.addEventListener("input", function () {
         let quantity = Math.max(1, parseInt(quantityInput.value) || 1);
@@ -57,5 +58,29 @@ document.addEventListener("DOMContentLoaded", function () {
         totalAmount.value = "₱" + (quantity * price).toFixed(2);
     });
 
-    quantityInput.dispatchEvent(new Event("input")); // Initialize total price
+    quantityInput.dispatchEvent(new Event("input")); 
+    
+
+    // add to cart function when pressed the button "Add to Cart" 
+    document.querySelector(".btn-add-to-cart").addEventListener("click", function (event) {
+        event.preventDefault(); 
+        
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingProduct = cart.find(item => item.name === product.name);
+        let isNewProduct = false;
+
+        if (existingProduct) {
+            existingProduct.quantity += Math.max(1, parseInt(quantityInput.value) || 1); // fixed this line , before -> it rewrites the quantity when passing to cart instead of adding
+        } else {
+            product.quantity = Math.max(1, parseInt(quantityInput.value) || 1);
+            cart.push(product);
+            isNewProduct = true;
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        if (isNewProduct) {
+            updateCartCount(); 
+        }
+    });
+
 });

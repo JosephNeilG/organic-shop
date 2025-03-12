@@ -3,25 +3,6 @@
  * @param {string} id - The ID of the target element where the component will be loaded.
  * @param {string} file - The path to the external HTML file.
  */
-function loadComponent(id, file) {
-    fetch(file)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(id).innerHTML = data;
-
-            // Add event auth buttons event listener after nav being loaded.
-            if (id === "navbar") {
-                setupNavbarEventListeners();
-            }
-        })
-        .catch(error => console.error(`Error loading ${file}:`, error));
-}
-
-// Load components
-loadComponent("sidebar", "components/sidebar.html");
-loadComponent("navbar", "components/navbar.html");
-loadComponent("search-cart", "components/search-cart.html");
-
 /** DOCU: Adds event listeners for signup, login, and logout actions in the navbar. */
 function setupNavbarEventListeners() {
     const authButtons = document.querySelector(".btn-container");
