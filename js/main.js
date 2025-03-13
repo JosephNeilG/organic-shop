@@ -1,8 +1,9 @@
 function updateCartCount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartData = localStorage.getItem("cart");
+    let cart = cartData ? cartData.split(";").filter(item => item.trim() !== "") : [];
     let totalUniqueItems = cart.length;
-    let cartCountElement = document.getElementById("cart-count");
 
+    let cartCountElement = document.getElementById("cart-count");
     if (cartCountElement) {
         cartCountElement.textContent = `(${totalUniqueItems})`;
     }
@@ -20,8 +21,7 @@ function loadComponent(id, file, callback = null) {
         .catch(error => console.error(`Error loading ${file}:`, error));
 }
 
-
-// load all components 
+// load all components
 document.addEventListener("DOMContentLoaded", function () {
     loadComponent("sidebar", "components/sidebar.html");
     loadComponent("navbar", "components/navbar.html", function () {

@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cartContainer = document.querySelector(".cart");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartTotal = document.querySelector(".cart-total");
 
-    cartContainer.innerHTML = ""; // clear static items items
+    let cartData = localStorage.getItem("cart") || ""; 
+    let cart = cartData
+        .split(";")
+        .map(item => item.trim()) 
+        .filter(item => item !== ""); 
+
+    cartContainer.innerHTML = ""; // Clear static items
 
     if (cart.length === 0) {
         cartContainer.innerHTML = `
@@ -13,7 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
             </li>
         `;
     } else {
-        cart.forEach(product => {
+        cart.forEach(itemString => {
+            let productData = itemString.split("|");
+            if (productData.length < 6) return; 
+
+            let product = {
+                name: productData[0],
+                price: productData[1],
+                img: productData[2],
+                description: productData[4],
+                quantity: Math.max(1, parseInt(productData[5]) || 1) 
+            };
+
             let cartItem = document.createElement("li");
             cartItem.classList.add("list-group-item", "d-flex", "align-items-center", "p-0", "shadow", "rounded-4");
 
@@ -45,28 +60,28 @@ document.addEventListener("DOMContentLoaded", function () {
             cartContainer.appendChild(cartItem);
         });
 
-        // update quantity and remove items
+        // Update quantity
         document.querySelectorAll(".cart-quantity").forEach(input => {
             input.addEventListener("input", function () {
-                let updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
-                let item = updatedCart.find(p => p.name === this.dataset.name);
+                let updatedCart = cart.map(item => {
+                    let data = item.split("|");
+                    if (data[0] === this.dataset.name) {
+                        data[5] = Math.max(1, parseInt(this.value) );
+                    }
+                    return data.join("|");
+                });
 
-                if (item) {
-                    item.quantity = Math.max(1, parseInt(this.value) || 1);
-                    localStorage.setItem("cart", JSON.stringify(updatedCart));
-                    location.reload(); // refresh 
-                }
+                localStorage.setItem("cart", updatedCart.join(";"));
+                location.reload();
             });
         });
-        
 
+        // Remove items
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", function () {
-                let updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
-                updatedCart = updatedCart.filter(p => p.name !== this.dataset.name);
-
-                localStorage.setItem("cart", JSON.stringify(updatedCart));
-                location.reload(); // refresh
+                let updatedCart = cart.filter(item => !item.startsWith(this.dataset.name + "|"));
+                localStorage.setItem("cart", updatedCart.join(";"));
+                location.reload();
             });
         });
     }

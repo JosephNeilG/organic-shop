@@ -1,14 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    // Get product from localStorage
+    const productString = localStorage.getItem("selectedProduct");
+    if (!productString) return;
 
-    // set main product details
+    // convert pipe-separated string back to  object
+    const productArray = productString.split("|");
+
+    const product = {
+        name: productArray[0],
+        price: productArray[1],
+        img: productArray[2],
+        rating: parseInt(productArray[3]), // convert rating to a number
+        description: productArray[4]
+    };
+
+    // Set main product details
     document.querySelector(".main-img").src = product.img;
     document.querySelector(".main-img").alt = product.name;
     document.querySelector(".details-container h3").textContent = product.name;
     document.querySelector(".price").textContent = product.price;
     document.querySelector(".description").textContent = product.description;
 
-    // generate star ratings
+    // Generate star ratings
     const ratingContainer = document.querySelector(".rating");
     ratingContainer.innerHTML = "";
     for (let i = 0; i < 5; i++) {
@@ -50,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const quantityInput = document.querySelector(".quantity-input");
     const totalAmount = document.querySelector(".total-amount input");
     const price = parseFloat(product.price.replace("₱", ""));
-  
 
     quantityInput.addEventListener("input", function () {
         let quantity = Math.max(1, parseInt(quantityInput.value) || 1);
@@ -59,28 +71,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     quantityInput.dispatchEvent(new Event("input")); 
-    
 
-    // add to cart function when pressed the button "Add to Cart" 
+   
     document.querySelector(".btn-add-to-cart").addEventListener("click", function (event) {
-        event.preventDefault(); 
+        event.preventDefault(); //stops reloading page
         
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        let existingProduct = cart.find(item => item.name === product.name);
-        let isNewProduct = false;
+        let cart = localStorage.getItem("cart") ? localStorage.getItem("cart").split(";") : [];
+        let existingIndex = cart.findIndex(item => item.startsWith(product.name + "|"));
 
-        if (existingProduct) {
-            existingProduct.quantity += Math.max(1, parseInt(quantityInput.value) || 1); // fixed this line , before -> it rewrites the quantity when passing to cart instead of adding
+        if (existingIndex !== -1) {
+            let cartItem = cart[existingIndex].split("|");
+            cartItem[5] = parseInt(cartItem[5]) + Math.max(1, parseInt(quantityInput.value) || 1);
+            cart[existingIndex] = cartItem.join("|");
         } else {
             product.quantity = Math.max(1, parseInt(quantityInput.value) || 1);
-            cart.push(product);
-            isNewProduct = true;
+            let productData = `${product.name}|${product.price}|${product.img}|${product.rating}|${product.description}|${product.quantity}`;
+            cart.push(productData);
         }
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        if (isNewProduct) {
-            updateCartCount(); 
-        }
+        localStorage.setItem("cart", cart.join(";"));
+        updateCartCount(); 
     });
-
 });
