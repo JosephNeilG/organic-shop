@@ -17,7 +17,9 @@ const zipError = document.getElementById("zipValidation");
 const checkoutBtn = document.querySelector("#checkoutBtn");
 
 // Checkout Form Modal and Elements
-const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
+const checkoutModal = new bootstrap.Modal(
+    document.getElementById("checkoutModal")
+);
 
 const cardName = document.querySelector("#cardName");
 const cardNumber = document.querySelector("#cardNumber");
@@ -38,7 +40,7 @@ const checkoutConfirmationModal = new bootstrap.Modal(document.querySelector("#c
  * DOCU: Handles checkout button click event and validates shipping form. If valid, opens the checkout modal.
  * @param {Event} event - Prevents default form submission.
  */
-checkoutBtn.addEventListener("click", function(event) {
+checkoutBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
     if (validateShippingInfoForm()) {
@@ -48,7 +50,7 @@ checkoutBtn.addEventListener("click", function(event) {
 
 /**
  * DOCU: Handles payment button click event and validates checkout form.
- * If valid, closes the checkout modal, clears shipping info, and opens confirmation modal.
+ * If valid, closes the checkout modal, clears cart, shipping info, order summary, and update cart button counter and opens confirmation modal.
  * @param {Event} event - Prevents default form submission.
  */
 payButton.addEventListener("click", function (event) {
@@ -56,7 +58,10 @@ payButton.addEventListener("click", function (event) {
 
     if (validateCheckoutForm()) {
         checkoutModal.hide();
+        clearCartContainer();
         clearShippingInfoForm();
+        clearOrderSummary();
+        updateCartCount();
         checkoutConfirmationModal.show();
     }
 });
@@ -198,4 +203,28 @@ function clearShippingInfoForm() {
     cityInput.value = "";
     provinceInput.value = "";
     zipInput.value = "";
+}
+
+/** DOCU: Clears the order summary by resetting the displayed values for item total, shipping fee, and total amount to "₱0.00". */
+function clearOrderSummary() {
+    document.querySelector("#itemsTotal").textContent = "₱0.00";
+    document.querySelector("#shippingFee").textContent = "₱0.00";
+    document.querySelector("#totalAmount").textContent = "₱0.00";
+}
+
+/** DOCU: Clears the cart container by removing all items from local storage and updating the UI to display a "cart empty" message. */
+function clearCartContainer() {
+    // Remove all items from localStorage
+    localStorage.removeItem("cart");
+
+    // Select the cart container and update the UI
+    const cartContainer = document.querySelector(".cart");
+    if (cartContainer) {
+        cartContainer.innerHTML = `
+            <li class="list-group-item text-center p-5 shadow rounded-4">
+                <h6 class="mb-3">There are no items in this cart.</h6>
+                <a href="/index.html" class="btn btn-outline-purple">Continue Shopping</a>
+            </li>
+        `;
+    }
 }

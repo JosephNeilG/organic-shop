@@ -68,15 +68,15 @@
                                 <p class="mb-2 text-muted fw-semibold">Order Summary</p>
                                 <div class="d-flex mb-2">
                                     <p class="small text-muted mb-0">Items</p>
-                                    <p class="small ms-auto text-light-emphasis mb-0">$40</p>
+                                    <p id="itemsTotal" class="small ms-auto text-light-emphasis mb-0">₱0.00</p>
                                 </div>
                                 <div class="d-flex border-bottom pb-3 mb-3">
                                     <p class="small text-muted mb-0">Shipping Fee</p>
-                                    <p class="small ms-auto text-light-emphasis mb-0">$5</p>
+                                    <p id="shippingFee" class="small ms-auto text-light-emphasis mb-0">₱0.00</p>
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <p class="small text-muted mb-0">Total Amount</p>
-                                    <p class="ms-auto price mb-0 fw-semibold purple">$45</p>
+                                    <p id="totalAmount" class="ms-auto price mb-0 fw-semibold purple">₱0.00</p>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -126,7 +126,7 @@
 
                                         <div class="border-top mt-4 pt-3">
                                             <p class="small text-muted mb-3 text-end">
-                                                Total Amount: <span class="ms-3 purple fw-semibold fs-5">$45</span>
+                                                Total Amount: <span id="totalAmountCheckout" class="ms-3 purple fw-semibold fs-5">$45</span>
                                             </p>
                                             <button id="payBtn" type="submit"
                                                 class="btn btn-solid-purple w-100 py-2">Pay</button>
