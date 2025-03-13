@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="badge bg-secondary-subtle rounded-4 py-1 px-2">${product.price}</p>
                 </div>
 
-                <div class="d-flex gap-4 me-4">
+                <div class="d-flex gap-4 me-4 w-25">
                     <div class="d-flex flex-column">
                         <label class="text-muted mb-1">Quantity</label>
                         <input type="number" class="form-control cart-quantity" value="${product.quantity}" min="1" data-name="${product.name}">
