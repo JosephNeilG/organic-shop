@@ -129,7 +129,13 @@ productContainer.innerHTML = productGridHTML;
 document.querySelectorAll(".product-card").forEach(card => {
     card.addEventListener("click", () => {
         const index = card.getAttribute("data-index");
-        localStorage.setItem("selectedProduct", JSON.stringify(products[index]));
-        window.location.href = "product-view.html"; // Redirect to product-view.html
+        const product = products[index];
+
+       
+        let productString = `${product.name}|${product.price}|${product.img}|${product.rating}|${product.description}`;
+        localStorage.setItem("selectedProduct", productString);
+
+        
+        window.location.href = "product-view.html";
     });
 });
