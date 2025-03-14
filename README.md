@@ -29,6 +29,8 @@
 
 An interactive user interface with product listings, signup & login modals, product view, add-to-cart function, cart management, and a checkout/payment process. This project was developed as our final group project during our OJT at Armada Logics.
 
+[Demo](https://josephneilg.github.io/organic-shop/)
+
 <p align="right">(<a href="#organic-shop-ui">back to top</a>)</p>
 
 <h2 id="tech-used">Technologies Used</h2>
